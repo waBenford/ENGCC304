@@ -10,7 +10,7 @@ int main() {
     scanf("%d", &Age);  // อ่านอายุ (ต้องใช้ &)
 
     printf("- - - - - -\n");
-    printf("Hello %s\n", Name);  // แสดงชื่อ
+    printf("Kuy %s\n", Name);  // แสดงชื่อ
     printf("Age = %d\n", Age);   // แสดงอายุ
 
     return 0;
