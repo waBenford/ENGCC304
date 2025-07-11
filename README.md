@@ -1,1 +1,1 @@
-kuy rai i sus
+Sa wat dee kub khun-kru
