@@ -15,4 +15,6 @@ int main() {
     printf("Expected Output: \n");
     printf("Employees ID = %d\n", numbers);
     printf("Salary = U$ %.2f\n", hrs * salary);
+    
+    return 0;
 }//end
