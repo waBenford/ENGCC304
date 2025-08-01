@@ -11,7 +11,7 @@ int main() {
         }else {
             printf( "Only number" );
         }
-    }
+    }//end while
 
     if (n % 2 == 1) {
         for (i = 1 ; i <= n ; i++) {
