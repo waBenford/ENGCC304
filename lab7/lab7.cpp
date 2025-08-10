@@ -9,7 +9,6 @@ int main() {
         srand( time( NULL ) ) ;
 
         int randomNumber = rand() % 100 + 1;
-        int Userscore = 100;
         int Want_to_play = 0;
 
         printf( "Do you want to play game? (1 = play | -1 = exit): \n" );
@@ -25,6 +24,7 @@ int main() {
         if ( Want_to_play == 1 ) { //เช็คว่าต้องการเล่นเกมมั้ย
             printf( "(Score=100)\n\n" );
 
+            int Userscore = 100;
             int min = 1;
             int max = 100;
 
