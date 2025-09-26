@@ -1,15 +1,14 @@
-#include <iostream>
-using namespace std;
+#include <stdio.h>
 
 int main() {
     int Position , Time , Project;
 
-    cout << "Enter your Position(1-3): ";
-    cin >> Position;
-    cout << "Enter your Time in work: ";
-    cin >> Time;
-    cout << "Enter your Project success this years: ";
-    cin >> Project;
+    printf("Enter your Position(1-3): ");
+    scanf("%d", &Position);
+    printf("Enter your Time in work: ");
+    scanf("%d", &Time);
+    printf("Enter your Project success this years: ");
+    scanf("%d", &Project);
 
     //Base salary เงินเริ่มต้นของแต่ละแผนก
     int Base = 0;
@@ -17,18 +16,18 @@ int main() {
     switch( Position ) {
         case 1:
             Base = 20000;
-            cout << "Base salary: " << Base << " THB" << endl;
+            printf("Base salary: %d THB\n", Base);
             break;
         case 2:
             Base = 35000;
-            cout << "Base Salary: " << Base << " THB" << endl;
+            printf("Base Salary: %d THB\n", Base);
             break;
         case 3:
             Base = 50000;
-            cout << "Base Salary: " << Base << " THB" << endl;
+            printf("Base Salary: %d THB\n", Base);
             break;
         default:
-            cout << "Please input only number 1-3!" << endl;
+            printf("Please input only number 1-3!\n");
             return 0;
     }
 
@@ -37,18 +36,18 @@ int main() {
 
     if( Time > 5 ) {
         Time_bonus = Base * 20 / 100;
-        cout << "Experience Bonus: " << Time_bonus << " THB" << endl;
+        printf("Experience Bonus: %d THB\n", Time_bonus);
     }
     else if( Time >= 4 ) {
         Time_bonus = Base * 15 / 100;
-        cout << "Experience Bonus: " << Time_bonus << " THB" << endl;
+        printf("Experience Bonus: %d THB\n", Time_bonus);
     }
     else if( Time >= 1 ) {
         Time_bonus = Base * 10 / 100;
-        cout << "Experience Bonus: " << Time_bonus << " THB" << endl;
+        printf("Experience Bonus: %d THB\n", Time_bonus);
     }
     else {
-        cout << "Experience Bonus: 0 THB" << endl;
+        printf("Experience Bonus: 0 THB\n");
     }
 
     //Special Bonus โบนัสโปรเจ็คที่เสร็จ
@@ -56,13 +55,15 @@ int main() {
 
     if( Project > 5 ) {
         Project_bonus = Base * 5 / 100;
-        cout << "Special Bonus: " << Project_bonus << " THB" << endl;
+        printf("Special Bonus: %d THB\n", Project_bonus);
     }
     else {
-        cout << "Special Bonus: 0 THB" << endl;
+        printf("Special Bonus: 0 THB\n");
     }
 
     int Total = 0;
     Total = Base + Time_bonus + Project_bonus;
-    cout << "Net Salary: " << Total << " THB" << endl;
+    printf("Net Salary: %d THB\n", Total);
+
+    return 0;
 }
