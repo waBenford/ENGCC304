@@ -1,49 +1,49 @@
-#include <iostream>
-using namespace std;
+#include <stdio.h>
 
 int main() {
     int N = 0;
 
-    cout << "Enter N : ";
-    cin >> N;
+    printf("Enter N : ");
+    scanf("%d", &N);
 
     int block_N[N];
 
-    //ลูปนอกสุด ไล่arrayทีละตัว
-    for( int i = 0 ; i < N ; i++ ) {
+    // ลูปนอกสุด ไล่ array ทีละตัว
+    for (int i = 0; i < N; i++) {
         int prime = 1;
 
-        cout << "Enter value[" << i << "] : " << endl;
-        cin >> block_N[i];
+        printf("Enter value[%d] : \n", i);
+        scanf("%d", &block_N[i]);
 
-        //ลูปใน เอาตัวarrayที่ไล่มา เช็คว่ามีตัวหารลงตัวมั้ย
-        for( int j = 2 ; j < block_N[i] ; j++ ) {
-            if( block_N[i] % j == 0 ) {
+        // ลูปใน เอาตัว array ที่ไล่มา เช็คว่ามีตัวหารลงตัวมั้ย
+        for (int j = 2; j < block_N[i]; j++) {
+            if (block_N[i] % j == 0) {
                 prime = 0;
                 break;
             }
         }
 
-        if( prime == 0 ) {
+        if (prime == 0) {
             block_N[i] = -1;
         }
     }
 
-    cout << "Index : ";
-    //ลูป print Index
-    for( int i = 0 ; i < N ; i++ ) {
-        cout << i << " ";
+    printf("Index : ");
+    // ลูป print Index
+    for (int i = 0; i < N; i++) {
+        printf("%d ", i);
     }
-    cout << endl;
+    printf("\n");
 
-    cout << "Array : ";
-    //ลูป print Array
-    for( int i = 0 ; i < N ; i++ ) {
-        if( block_N[i] == -1 ) {
-            cout << "# ";
-        }else {
-            cout << block_N[i] << " ";
+    printf("Array : ");
+    // ลูป print Array
+    for (int i = 0; i < N; i++) {
+        if (block_N[i] == -1) {
+            printf("# ");
+        } else {
+            printf("%d ", block_N[i]);
         }
     }
 
+    return 0;
 }
