@@ -1,20 +1,26 @@
-#include <iostream>
-#include <string>
-using namespace std;
+#include <stdio.h>
+#include <string.h>
 
 int main() {
-    string text;
-    
-    cout << "Enter word: ";
-    cin >> text;
+    char text[100];
+    char reverse[100];
+    int len, i;
 
-    string reverse(text.rbegin(), text.rend());
+    printf("Enter word: ");
+    scanf("%s", text);
 
-    cout << "----- ";
-    if( text == reverse ) {
-        cout << "Pass.";
-    }else {
-        cout << "Not Pass.";
+    len = strlen(text); //หาความยาว text
+
+    for(i = 0; i < len; i++) {
+        reverse[i] = text[len - i - 1]; //มาเอาตัวท้าย สมมุติ tanwa = 5 (รอบแรก text[5 - 0 - 1 = 4] ตัวสุดท้ายarrayพอดี)
     }
-    cout << " -----";
+    reverse[len] = '\0'; //จบstring
+
+    if(strcmp(text, reverse) == 0) {
+        printf("Pass.");
+    } else {
+        printf("Not Pass.");
+    }
+
+    return 0;
 }
