@@ -18,7 +18,7 @@ int main() {
     reverse[len] = '\0'; //จบstring
 
     for(i = 0; i < len; i++) {
-        text[i] = tolower(text[i]);
+        text[i] = tolower(text[i]); //เปลี่ยนเป็นตัวเล็ก
         reverse[i] = tolower(text[i]);
     }
 
