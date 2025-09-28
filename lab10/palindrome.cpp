@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 
 int main() {
     char text[100];
@@ -18,8 +17,12 @@ int main() {
     reverse[len] = '\0'; //จบstring
 
     for(i = 0; i < len; i++) {
-        text[i] = tolower(text[i]); //เปลี่ยนเป็นตัวเล็ก
-        reverse[i] = tolower(text[i]);
+        if(text[i] >= 'A' && text[i] <= 'Z') {
+            text[i] = text[i] + 32;   // แปลงเป็นเล็ก
+        }
+        if(reverse[i] >= 'A' && reverse[i] <= 'Z') {
+            reverse[i] = reverse[i] + 32;
+        }
     }
 
     if(strcmp(text, reverse) == 0) {
