@@ -1,21 +1,31 @@
 #include <stdio.h>
 
-void swapNumbers( int a , int b) {
-    printf( "Before swap (num1 & num2) : %d, %d\n" , a , b );
-    a = a + b;
-    b = a - b;
-    a = a - b;
-    printf("After swap (num1 & num2) : %d, %d" , a , b);
-}
+void swapNumbers(int *x, int *y);
 
 int main() {
-    int a , b , *PA , *PB;
-    PA = &a;
-    PB = &b;
+    int num1, num2;
+    int *ptr1, *ptr2;
 
-    printf( "Enter Num1: " );
-    scanf( "%d" , &a );
-    printf( "Enter Num2: " );
-    scanf( "%d" , &b );
-    swapNumbers( *PA , *PB );
+    printf("Enter num1 : ");
+    scanf("%d", &num1);
+    printf("Enter num2 : ");
+    scanf("%d", &num2);
+
+    ptr1 = &num1;
+    ptr2 = &num2;
+
+    printf("Before swap (num1 & num2) : %d, %d\n", num1, num2);
+
+    swapNumbers(ptr1, ptr2);
+
+    printf("After swap (num1 & num2) : %d, %d\n", num1, num2);
+
+    return 0;
+}
+
+void swapNumbers(int *x, int *y) {
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
 }
