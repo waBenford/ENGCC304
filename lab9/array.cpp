@@ -13,7 +13,7 @@ int main() {
         int prime = 1;
 
         printf("Enter value[%d] : \n", i);
-        scanf("%d", &block_N[i]);
+        scanf("%d", &block_N[i]);   
 
         // ลูปใน เอาตัว array ที่ไล่มา เช็คว่ามีตัวหารลงตัวมั้ย
         for (int j = 2; j < block_N[i]; j++) {
