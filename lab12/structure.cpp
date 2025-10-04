@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+void Grade(float a);
+
 struct Student {
     char Name[20];
     char ID[3];
@@ -9,21 +11,6 @@ struct Student {
     float ScoreSub4;
     float ScoreSub5;
 }typedef S;
-
-
-char* Grade(float a) {
-    static char* grade[] = {"A" , "B+" , "B" , "C+" , "C" , "D+" , "D" };
-
-    if( a >= 80 ) return grade[0];
-    else if( a >= 75 ) return grade[1];
-    else if( a >= 70 ) return grade[2];
-    else if( a >= 65 ) return grade[3];
-    else if( a >= 60 ) return grade[4];
-    else if( a >= 55 ) return grade[5];
-    else if( a >= 50 ) return grade[6];
-    else return "F";
-}
-
 
 int main() {
     int i = 0;
@@ -66,8 +53,28 @@ int main() {
 
         printf( "Grade:" );
         for( int o = 0 ; o < 5 ; o++ ){
-            printf( " %s" , Grade(Point[o]) );
+            Grade(Point[o]);
+            printf( " " );
         }
+
+        float sum = 0.0f;
+        for (int o = 0; o < 5; o++) sum += Point[o];
+        float avg = sum / 5.0f;
+        printf( "\nAverage: %.2f" , avg );
+
         printf( "\n\n" );
     }
+}
+
+
+
+void Grade(float a) {
+    if( a >= 80 ) printf( "A" );
+    else if( a >= 75 ) printf( "B+" );
+    else if( a >= 70 ) printf( "B" );
+    else if( a >= 65 ) printf( "C+" );
+    else if( a >= 60 ) printf( "C" );
+    else if( a >= 55 ) printf( "D+" );
+    else if( a >= 50 ) printf( "D" );
+    else printf( "F" );
 }
